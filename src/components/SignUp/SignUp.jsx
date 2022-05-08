@@ -1,4 +1,3 @@
-import { confirmPasswordReset, EmailAuthCredential } from "firebase/auth";
 import React, { useState } from "react";
 
 import FormInput from "../FormInput/FormInput";
@@ -39,9 +38,11 @@ function SignUp() {
         email,
         password
       );
+
       await createUserDocumentFromAuth(user, {
         displayName,
       }); // displayName will overwrite the null displayName
+
       resetFormFields();
 
       console.log(user);
@@ -58,7 +59,6 @@ function SignUp() {
     const { name, value } = e.target;
 
     setFormFields({ ...formFields, [name]: value });
-    console.log(formFields, [name], name);
   };
 
   return (

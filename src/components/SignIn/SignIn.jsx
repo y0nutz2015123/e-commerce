@@ -1,4 +1,3 @@
-import { confirmPasswordReset, EmailAuthCredential } from "firebase/auth";
 import React, { useState } from "react";
 
 import FormInput from "../FormInput/FormInput";
@@ -6,7 +5,6 @@ import Button from "../Button/Button";
 
 import {
   signInWithGooglePopup,
-  createUserDocumentFromAuth,
   signInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
 
@@ -26,8 +24,7 @@ function SignIn() {
   };
 
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup(); // destruc user from response
-    await createUserDocumentFromAuth(user);
+    /*const { user } =*/ await signInWithGooglePopup(); // destruc user from response
   };
 
   const handleSubmit = async (e) => {
@@ -35,6 +32,7 @@ function SignIn() {
 
     try {
       await signInAuthUserWithEmailAndPassword(email, password);
+
       resetFormFields();
     } catch (error) {
       switch (error.code) {
