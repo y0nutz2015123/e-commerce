@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState } from "react";
+import React, { Fragment, useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
 
 import CartIcon from "../../components/CartIcon/CartIcon";
@@ -13,7 +13,7 @@ import "./navigation.styles.scss";
 
 function Navigation() {
   const { currentUser } = useContext(UserContext);
-  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
+  const { isCartOpen } = useContext(CartContext);
 
   return (
     <Fragment>
