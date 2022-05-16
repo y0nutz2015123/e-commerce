@@ -3,14 +3,14 @@ import React from "react";
 import SignUp from "../../components/SignUp/SignUp";
 import SignIn from "../../components/SignIn/SignIn";
 
-import "./authentication.styles.scss";
+import { AuthenticationContainer } from "./authentication.styles";
 
 function Authentication() {
   return (
-    <div className="authentication-container">
+    <AuthenticationContainer>
       <SignIn />
       <SignUp />
-    </div>
+    </AuthenticationContainer>
   );
 }
 
